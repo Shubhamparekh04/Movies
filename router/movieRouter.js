@@ -14,6 +14,10 @@ movieRouter.get("/view", movieController.view);
 
 movieRouter.get("/delete/:id", movieController.delete);
 movieRouter.get("/edit/:id", movieController.edit);
-movieRouter.post("/update/:id",upload,movieController.update);
+movieRouter.post("/update/:id", upload, movieController.update);
+movieRouter.get("/signup", movieController.singupPage);
+movieRouter.get("/signin", movieController.singinPage);
+movieRouter.post("/adminCreate", movieController.createAdmincredential);
+movieRouter.post("/checkCred", movieController.checkCredentials);
 
 module.exports = movieRouter;

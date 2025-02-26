@@ -12,6 +12,7 @@ app.use("/uploads", express.static("uploads"));
 
 app.use("/", require("./router/movieRouter"));
 
+
 app.listen(port, (err) => {
   db();
   if (!err) {
