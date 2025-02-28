@@ -26,14 +26,12 @@
               
               <!-- Movie Name -->
               <div class="form-group row">
-                <label for="mname" class="col-sm-3 text-end control-label col-form-label">Movie Name</label>
+                <label class="col-sm-3 text-end control-label col-form-label">Movie Name</label>
                 <div class="col-sm-9">
                   <input 
                     type="text" 
                     class="form-control" 
-                    id="mname" 
                     name="moviename" 
-                    placeholder="Movie Name Here" 
                     required 
                     value="<%= movie.moviename %>"
                   />
@@ -54,20 +52,105 @@
 
               <!-- Upload New Thumbnail -->
               <div class="form-group row">
-                <label for="thumb" class="col-sm-3 text-end control-label col-form-label">Upload New Thumbnail</label>
+                <label class="col-sm-3 text-end control-label col-form-label">Upload New Thumbnail</label>
                 <div class="col-sm-9">
-                  <input type="file" class="form-control" id="thumb" name="thumbnail">
+                  <input type="file" class="form-control" name="thumbnail">
                 </div>
               </div>
 
-              <!-- Hidden input to store old image path -->
+              <!-- Hidden input for old thumbnail -->
               <input type="hidden" name="old_thumbnail" value="<%= movie.thumbnail %>">
 
-              <!-- Movie Description -->
+              <!-- Show Current Slider -->
               <div class="form-group row">
-                <label for="description" class="col-sm-3 text-end control-label col-form-label">Description</label>
+                <label class="col-sm-3 text-end control-label col-form-label">Current Slider</label>
                 <div class="col-sm-9">
-                  <textarea class="form-control" id="description" name="description" required><%= movie.description %></textarea>
+                  <% if (movie.slider) { %>
+                    <img src="/<%= movie.slider %>" alt="Slider Image" width="100">
+                  <% } else { %>
+                    <p>No Image Available</p>
+                  <% } %>
+                </div>
+              </div>
+
+              <!-- Upload New Slider -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end control-label col-form-label">Upload New Slider</label>
+                <div class="col-sm-9">
+                  <input type="file" class="form-control" name="slider">
+                </div>
+              </div>
+
+              <!-- Hidden input for old slider -->
+              <input type="hidden" name="old_slider" value="<%= movie.slider %>">
+
+              <!-- Release Year -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end control-label col-form-label">Release Year</label>
+                <div class="col-sm-9">
+                  <input 
+                    type="number" 
+                    class="form-control" 
+                    name="ryear" 
+                    min="1900" 
+                    max="2025" 
+                    required 
+                    value="<%= movie.ryear %>"
+                  />
+                </div>
+              </div>
+
+              <!-- Genre -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end control-label col-form-label">Genre</label>
+                <div class="col-sm-9">
+                  <select name="genre" class="w-auto">
+                    <option value="Action" <%= movie.genre === 'Action' ? 'selected' : '' %> >Action</option>
+                    <option value="Comedy" <%= movie.genre === 'Comedy' ? 'selected' : '' %> >Comedy</option>
+                    <option value="Drama" <%= movie.genre === 'Drama' ? 'selected' : '' %> >Drama</option>
+                    <option value="Thriller" <%= movie.genre === 'Thriller' ? 'selected' : '' %> >Thriller</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Cast -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end control-label col-form-label">Cast</label>
+                <div class="col-sm-9">
+                  <textarea 
+                    class="form-control" 
+                    name="cast" 
+                    required
+                  ><%= movie.cast %></textarea>
+                </div>
+              </div>
+
+              <!-- Rating -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end control-label col-form-label">Star</label>
+                <div class="col-sm-9">
+                  <input 
+                    type="number" 
+                    class="form-control" 
+                    name="rating" 
+                    step="1" 
+                    min="1" 
+                    max="5" 
+                    required 
+                    value="<%= movie.rating %>"
+                  />
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end control-label col-form-label">Description</label>
+                <div class="col-sm-9">
+                  <textarea 
+                    class="form-control" 
+                    name="description" 
+                    required
+                  ><%= movie.description %></textarea>
                 </div>
               </div>
 

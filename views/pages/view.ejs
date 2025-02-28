@@ -1,15 +1,6 @@
 <%- include("../partials/header.ejs")%>
 
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Page wrapper  -->
-<!-- ============================================================== -->
 <div class="page-wrapper">
-  <!-- ============================================================== -->
-  <!-- Bread crumb and right sidebar toggle -->
-  <!-- ============================================================== -->
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-12 d-flex no-block align-items-center">
@@ -19,7 +10,7 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">
-                View movies details
+                View Movies Details
               </li>
             </ol>
           </nav>
@@ -27,16 +18,8 @@
       </div>
     </div>
   </div>
-  <!-- ============================================================== -->
-  <!-- End Bread crumb and right sidebar toggle -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Container fluid  -->
-  <!-- ============================================================== -->
+
   <div class="container-fluid">
-    <!-- ============================================================== -->
-    <!-- Start Page Content -->
-    <!-- ============================================================== -->
     <div class="row">
       <div class="col-12">
         <div class="card">
@@ -45,33 +28,51 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Movie Name</th>
-                <th scope="col">Thumbnail</th>
-                <th scope="col">Description</th>
-                <th scope="col">Action</th>
+                <th>#</th>
+                <th>Movie Name</th>
+                <th>Thumbnail</th>
+                <th>Slider</th>
+                <th>Release Year</th>
+                <th>Genre</th>
+                <th>Cast</th>
+                <th>Rating</th>
+                <th>Description</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <% movies.forEach((movie,index)=>{ %>
+              <% movies.forEach((movie, index) => { %>
               <tr>
-                <td><%= index+1%></td>
-                <td><%= movie.moviename%></td>
+                <td><%= index + 1 %></td>
+                <td><%= movie.moviename %></td>
+                
+                <!-- Thumbnail -->
                 <td>
-                  <img
-                    src="<%= movie.thumbnail%>"
-                    alt="<%= movie.moviename%>"
-                    width="100px"
-                  />
+                  <% if (movie.thumbnail) { %>
+                    <img src="/<%= movie.thumbnail %>" alt="Thumbnail" width="80">
+                  <% } else { %>
+                    <p>No Image</p>
+                  <% } %>
                 </td>
-                <td><%= movie.description%></td>
+
+                <!-- Slider -->
                 <td>
-                  <a href="/delete/<%=movie.id%>" class="btn btn-danger"
-                    >Delete</a
-                  >
-                  <a href="/edit/<%=movie.id%>" class="btn btn-warning"
-                    >Edit</a
-                  >
+                  <% if (movie.slider) { %>
+                    <img src="/<%= movie.slider %>" alt="Slider" width="200">
+                  <% } else { %>
+                    <p>No Image</p>
+                  <% } %>
+                </td>
+
+                <td><%= movie.ryear %></td>
+                <td><%= movie.genre %></td>
+                <td><%= movie.cast %></td>
+                <td><%= movie.rating %>⭐</td>
+                <td><%= movie.description %></td>
+
+                <td>
+                  <a href="/edit/<%= movie._id %>" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="/delete/<%= movie._id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
               </tr>
               <% }) %>
@@ -80,23 +81,7 @@
         </div>
       </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End PAge Content -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Right sidebar -->
-    <!-- ============================================================== -->
-    <!-- .right-sidebar -->
-    <!-- ============================================================== -->
-    <!-- End Right sidebar -->
-    <!-- ============================================================== -->
   </div>
-  <!-- ============================================================== -->
-  <!-- End Container fluid  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- footer -->
-  <!-- ============================================================== -->
 
   <%- include("../partials/footer.ejs")%>
 </div>

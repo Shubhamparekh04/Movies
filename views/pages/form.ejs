@@ -18,7 +18,9 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Add Movies details</li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Add Movies details
+              </li>
             </ol>
           </nav>
         </div>
@@ -38,7 +40,12 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-          <form class="form-horizontal w-50" method="post" action="/create" enctype="multipart/form-data">
+          <form
+            class="form-horizontal w-50"
+            method="post"
+            action="/create"
+            enctype="multipart/form-data"
+          >
             <div class="card-body">
               <div class="form-group row">
                 <label
@@ -77,12 +84,98 @@
 
               <div class="form-group row">
                 <label
+                  for="slider"
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Slider</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="slider"
+                    name="slider"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label
+                  for="ryear"
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Release Year</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="number"
+                    name="releaseYear"
+                    class="form-control"
+                    id="ryear"
+                    name="ryear"
+                    min="1900"
+                    max="2025"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label
+                  for="genre"
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Genre</label
+                >
+
+                <div class="col-sm-9">
+                  <select name="genre" class="w-auto">
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Thriller">Thriller</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label
+                  for="genre"
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Cast</label
+                >
+
+                <div class="col-sm-9">
+                  <textarea
+                    class="form-control"
+                    name="cast"
+                    placeholder="Enter cast names, separated by commas"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label
+                  for="genre"
+                  class="col-sm-3 text-end control-label col-form-label"
+                  >Star</label
+                >
+                <div class="col-sm-9">
+                  <input name="rating" class="form-control" type="number" name="rating" step="1" min="1" max="5">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label
                   for="cono1"
                   class="col-sm-3 text-end control-label col-form-label"
                   >Description</label
                 >
                 <div class="col-sm-9">
-                  <textarea class="form-control" name="description" required></textarea>
+                  <textarea
+                    class="form-control"
+                    name="description"
+                    required
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -115,5 +208,5 @@
   <!-- footer -->
   <!-- ============================================================== -->
 
-  <%- include("../partials/footer")%>
 </div>
+<%- include("../partials/footer")%>
