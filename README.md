@@ -92,19 +92,19 @@ Cineverse/
 Below is a preview of the homepage after the latest UI improvements:
 
 **Client Side**:
-![1.Client Homepage](screenShots\clientHomePage.png)
-![2.About Page](screenShots\aboutPage.png)
-![3.Movie Review Page](screenShots\moviesReview.png)
-![4.Single Page](screenShots\single.png)
-![5.Join Us Page](screenShots\joinus.png)
-![6.Contact Page](screenShots\contactPage.png)
+![1.Client Homepage](screenShots/clientHomePage.png)
+![2.About Page](screenShots/aboutPage.png)
+![3.Movie Review Page](screenShots/moviesReview.png)
+![4.Single Page](screenShots/single.png)
+![5.Join Us Page](screenShots/joinus.png)
+![6.Contact Page](screenShots/contactPage.png)
 
 **Admin Side**:
-![1.Signin Page](screenShots\signinPage-1.png)
-![2.Admin Dashboard](screenShots\dashboard.png)
-![3.Add Movies Page](screenShots\addMovies.png)
-![4.View Movies Page](screenShots\viewMovies.png)
-![5.Edit Movie Page](screenShots\editMovie.png)
+![1.Signin Page](screenShots/signinPage-1.png)
+![2.Admin Dashboard](screenShots/dashboard.png)
+![3.Add Movies Page](screenShots/addMovies.png)
+![4.View Movies Page](screenShots/viewMovies.png)
+![5.Edit Movie Page](screenShots/editMovie.png)
 
 
 
