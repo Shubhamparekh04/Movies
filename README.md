@@ -32,34 +32,34 @@ Cineverse is a full-stack movie website built with **Node.js, Express, MongoDB, 
 ## 🚀 Installation & Setup
 
 ### 1️⃣ Clone the Repository
-```bash
+```
 git clone https://github.com/your-username/cineverse.git
 cd cineverse
 ```
 
 ### 2️⃣ Install Dependencies
-```bash
+```
 npm install
 ```
 
 ### 3️⃣ Setup Environment Variables
 Create a `.env` file in the root directory and add the following:
-```env
+```
 MONGO_URI=mongodb+srv://yourusername:yourpassword@cluster.mongodb.net/movies
-PORT=5000
-SESSION_SECRET=your_secret_key
 ```
 
 ### 4️⃣ Run the Project
-```bash
+```
 npm start
 ```
 
 The app will be live at `http://localhost:5000`
 
 ## 🔑 Default Admin Credentials
-- **Username**: admin
-- **Password**: admin123
+```
+Username: admin
+Password: admin123
+```
 
 ## 📂 Folder Structure
 ```
@@ -88,6 +88,11 @@ Cineverse/
 │-- package.json  # Project metadata & dependencies
 ```
 
+## 📸 Keep Screenshot
+Below is a preview of the homepage after the latest UI improvements:
+
+![Homepage Screenshot](public/screenshots/homepage.png)
+
 ## 🎯 Usage Guide
 - **Access Client Side**: Open [`movies-zsd5.onrender.com`](https://movies-zsd5.onrender.com)
 - **Access Admin Panel**: Go to [`movies-zsd5.onrender.com/admin`](https://movies-zsd5.onrender.com/admin) and log in using the **Admin Credentials**.
@@ -96,4 +101,3 @@ Cineverse/
 ---
 
 Enjoy using **Cineverse**! 🎬🍿
-
