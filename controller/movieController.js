@@ -146,7 +146,7 @@ module.exports.checkCredentials = async (req, res) => {
 
   if (cred.username === username && cred.password === password) {
     res.cookie("userId", cred.id);
-    return res.redirect("/");
+    return res.redirect("/admin");
   } else {
     console.log("Invalid credentials!");
     return res.redirect("/signin");
@@ -160,13 +160,14 @@ module.exports.logOut = (req, res) => {
 
 module.exports.clientHomepage = async (req, res) => {
   try {
-    const movies = await movieModel.find(); // Fetch all movies from DB
-    res.render("clientIndex", { movies }); // Send movies to EJS
+    const movies = await movieModel.find();
+    res.render("clientIndex", { movies });
   } catch (error) {
-    console.log(error.message);
-    res.render("clientIndex", { movies: {} }); // Send movies to EJS
+    console.log("Error fetching movies:", error.message);
+    res.render("clientIndex", { movies: [] });
   }
 };
+
 
 module.exports.aboutPage = (req, res) => {
   res.render("./pages/about");
